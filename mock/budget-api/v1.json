@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "title": "Desktop Tower",
+      "amount": 7,
+      "price": 2500,
+      "contactMobileNo": "0823456789",
+      "status": "PENDING",
+      "id": 2
+    },
+    {
+      "title": "Mechanical Keyboard",
+      "amount": 6,
+      "price": 750,
+      "contactMobileNo": "0834567890",
+      "status": "REJECTED",
+      "id": 3
+    },
+    {
+      "title": "Curved Monitor",
+      "amount": 2,
+      "price": 1800,
+      "contactMobileNo": "0845678901",
+      "status": "PENDING",
+      "id": 4
+    },
+    {
+      "title": "Gaming Mouse",
+      "amount": 1,
+      "price": 600,
+      "contactMobileNo": "0856789012",
+      "status": "APPROVED",
+      "id": 5
+    },
+    {
+      "title": "Graphic Card",
+      "amount": 4,
+      "price": 4500,
+      "contactMobileNo": "0867890123",
+      "status": "REJECTED",
+      "id": 6
+    },
+    {
+      "title": "Motherboard",
+      "amount": 8,
+      "price": 2300,
+      "contactMobileNo": "0878901234",
+      "status": "PENDING",
+      "id": 7
+    },
+    {
+      "title": "CPU Cooler",
+      "amount": 5,
+      "price": 1200,
+      "contactMobileNo": "0889012345",
+      "status": "APPROVED",
+      "id": 8
+    },
+    {
+      "title": "SSD Storage",
+      "amount": 10,
+      "price": 500,
+      "contactMobileNo": "0890123456",
+      "status": "PENDING",
+      "id": 9
+    },
+    {
+      "title": "Gaming Chair",
+      "amount": 9,
+      "price": 1400,
+      "contactMobileNo": "0891234567",
+      "status": "REJECTED",
+      "id": 10
+    },
+    {
+      "title": "Lx New Item",
+      "contactMobileNo": "0123456789",
+      "amount": 20,
+      "price": 2500,
+      "status": "PENDING",
+      "id": 11
+    }
+  ]
+}
