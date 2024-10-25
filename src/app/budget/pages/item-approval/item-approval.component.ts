@@ -1,11 +1,11 @@
 import { DecimalPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { ConfirmModalComponent } from '../../../shared/components/confirm-modal/confirm-modal.component';
 import { MobileFormatPipe } from '../../../shared/pipes/mobile-format.pipe';
 import { ItemService } from '../../item.service';
 import { Item, ItemStatus } from '../../models/item';
-import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
-import { ConfirmModalComponent } from '../../../shared/components/confirm-modal/confirm-modal.component';
 
 type ItemAction = 'Approve' | 'Reject';
 
@@ -17,9 +17,12 @@ type ItemAction = 'Approve' | 'Reject';
   styleUrl: './item-approval.component.scss'
 })
 export class ItemApprovalComponent {
+  // httpClient = inject(HttpClient)
   itemService = inject(ItemService);
 
   items: Item[] = [];
+  filterItems = this.items;
+  filterInput = new FormControl<string>('', { nonNullable: true });
 
   modalService = inject(BsModalService);
   bsModalRef?: BsModalRef;
@@ -28,7 +31,8 @@ export class ItemApprovalComponent {
 
   constructor() {
     this.itemService.list().subscribe((vs) => {
-      this.items = vs;
+      this.items = vs.sort((a, b) => a.id - b.id); // Sort items by id in ascending order
+      this.filterItems = this.items;
     });
   }
 
@@ -63,5 +67,4 @@ export class ItemApprovalComponent {
       this.items = this.items.map((v) => (v.id === id ? { ...v, status: ItemStatus.REJECTED } : v));
     });
   }
-
 }

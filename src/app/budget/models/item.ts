@@ -4,17 +4,7 @@ export enum ItemStatus {
   APPROVED = 'APPROVED',
   REJECTED = 'REJECTED'
 }
-
-
-// export interface CreateItem {
-//   title: string;
-//   amount: number;
-//   price: number;
-//   contactMobileNo: string;
-//   status: ItemStatus;
-// }
-
-export type CreateItem = Omit<Item, "id">;
+export type CreateItem = Omit<Item, 'id'>;
 
 export type EditIem = CreateItem
 
@@ -24,5 +14,5 @@ export interface Item {
   amount: number | null;
   price: number | null;
   contactMobileNo: string;
-  status: ItemStatus;
+  status?: ItemStatus;
 }

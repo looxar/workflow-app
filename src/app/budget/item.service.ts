@@ -24,6 +24,7 @@ export class ItemService {
   }
 
   add(item: CreateItem) {
+    console.log('CreateItem : ', item)
     return this.httpClient.post<Item>(this.URL, item);
   }
 
@@ -36,11 +37,19 @@ export class ItemService {
   }
 
   // TODO: temp update by front-end
-  approve(id: number) {
-    return this.httpClient.patch<Item>(`${this.URL}/${id}`, { status: ItemStatus.APPROVED });
-  }
+  // approve(id: number) {
+  //   return this.httpClient.patch<Item>(`${this.URL}/${id}`, { status: ItemStatus.APPROVED });
+  // }
 
+  // reject(id: number) {
+  //   return this.httpClient.patch<Item>(`${this.URL}/${id}`, { status: ItemStatus.REJECTED });
+  // }
+
+  approve(id: number) {
+    return this.httpClient.patch<Item>(`${this.URL}/${id}/approve`, {}); // Adjust this if a specific endpoint exists
+  }
+  
   reject(id: number) {
-    return this.httpClient.patch<Item>(`${this.URL}/${id}`, { status: ItemStatus.REJECTED });
+    return this.httpClient.patch<Item>(`${this.URL}/${id}/reject`, {}); // Adjust this if a specific endpoint exists
   }
 }

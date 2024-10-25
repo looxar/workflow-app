@@ -7,6 +7,7 @@ import { routes } from './app.routes';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { authInterceptor } from './auth/interceptors/auth.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +15,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(withInterceptors([authInterceptor])), // add
     importProvidersFrom(ModalModule.forRoot()),
-    importProvidersFrom(AlertModule.forRoot())
+    importProvidersFrom(AlertModule.forRoot()), provideAnimationsAsync()
   ]
 };

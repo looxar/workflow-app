@@ -12,3 +12,5 @@ $primary: #630091;
 .ng-invalid.ng-touched {
     @extend .is-invalid;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
